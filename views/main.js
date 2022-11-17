@@ -9,8 +9,11 @@ module.exports = (pages) => layout(html`
     <button type="submit">Search</button>
   </form>
   <hr>
+  <a href=/wiki/add>Add a Page</a>
   <ul class="list-unstyled">
     <ul>
-      <!-- PLACEHOLDER LIST OF PAGES -->
+      ${pages.map((page) => html`<li><a href=/wiki/${page.slug}>${page.title}</a></li>`)}
     </ul>
   </ul>`);
+
+  // 
